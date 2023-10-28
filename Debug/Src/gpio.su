@@ -1,0 +1,4 @@
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_bus.h:303:22:LL_AHB1_GRP1_EnableClock	24	static
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_gpio.h:289:22:LL_GPIO_SetPinMode	40	static,ignoring_inline_asm
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_gpio.h:895:22:LL_GPIO_SetOutputPin	16	static
+../Src/gpio.c:35:6:MX_GPIO_Init	8	static

@@ -1,0 +1,14 @@
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_dma.h:525:22:LL_DMA_DisableChannel	1
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_dma.h:1326:26:LL_DMA_IsActiveFlag_TC7	1
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_dma.h:1634:22:LL_DMA_ClearFlag_TC7	1
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_usart.h:2586:26:LL_USART_IsActiveFlag_TC	1
+../Src/stm32f3xx_it.c:70:6:NMI_Handler	1
+../Src/stm32f3xx_it.c:83:6:HardFault_Handler	1
+../Src/stm32f3xx_it.c:98:6:MemManage_Handler	1
+../Src/stm32f3xx_it.c:113:6:BusFault_Handler	1
+../Src/stm32f3xx_it.c:128:6:UsageFault_Handler	1
+../Src/stm32f3xx_it.c:143:6:SVC_Handler	1
+../Src/stm32f3xx_it.c:156:6:DebugMon_Handler	1
+../Src/stm32f3xx_it.c:169:6:PendSV_Handler	1
+../Src/stm32f3xx_it.c:182:6:SysTick_Handler	1
+../Src/stm32f3xx_it.c:203:6:DMA1_Channel7_IRQHandler	3
