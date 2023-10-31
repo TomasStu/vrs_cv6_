@@ -23,6 +23,8 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Drivers/STM32F3xx_HAL_Driver/Src \
+HTS221 \
+LPS25HB \
 Src \
 Startup \
 

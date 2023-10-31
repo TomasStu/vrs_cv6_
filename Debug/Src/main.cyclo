@@ -14,6 +14,6 @@
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_system.h:1647:26:LL_FLASH_GetLatency	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_cortex.h:260:22:LL_SYSTICK_SetClkSource	2
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_gpio.h:953:22:LL_GPIO_TogglePin	1
-../Src/main.c:35:5:main	2
-../Src/main.c:63:6:SystemClock_Config	4
-../Src/main.c:100:6:Error_Handler	1
+../Src/main.c:34:5:main	2
+../Src/main.c:74:6:SystemClock_Config	4
+../Src/main.c:111:6:Error_Handler	1

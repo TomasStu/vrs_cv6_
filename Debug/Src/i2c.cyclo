@@ -12,6 +12,7 @@
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1540:26:LL_I2C_IsActiveFlag_TXIS	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1553:26:LL_I2C_IsActiveFlag_RXNE	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1592:26:LL_I2C_IsActiveFlag_STOP	1
+../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1605:26:LL_I2C_IsActiveFlag_TC	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1738:22:LL_I2C_ClearFlag_NACK	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1749:22:LL_I2C_ClearFlag_STOP	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_i2c.h:1854:22:LL_I2C_EnableAutoEndMode	1
@@ -22,4 +23,6 @@
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_bus.h:553:22:LL_APB1_GRP1_EnableClock	1
 ../Src/i2c.c:29:6:MX_I2C1_Init	1
 ../Src/i2c.c:76:9:i2c_master_read_byte	5
-../Src/i2c.c:106:6:I2C1_EV_IRQHandler	2
+../Src/i2c.c:105:9:i2c_master_read_bytes	6
+../Src/i2c.c:137:6:i2c_send_byte	3
+../Src/i2c.c:162:6:I2C1_EV_IRQHandler	2

@@ -1,0 +1,4 @@
+../HTS221/hts221.c:13:9:whoAmI	8	static
+../HTS221/hts221.c:19:9:readTemp	48	static
+../HTS221/hts221.c:51:9:convertTemp	24	static
+../HTS221/hts221.c:58:9:returnTemp	16	static

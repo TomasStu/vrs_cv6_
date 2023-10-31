@@ -102,6 +102,62 @@ uint8_t i2c_master_read_byte(uint8_t slave_address, uint8_t register_address)
 	return i2c_rx_data;
 }
 
+uint8_t i2c_master_read_bytes(uint8_t slave_address, uint8_t register_address, uint8_t* buffer, uint8_t length)
+{
+    // Enable RX from I2C
+    LL_I2C_EnableIT_RX(I2C1);
+
+    // Send the register address to the slave
+    LL_I2C_HandleTransfer(I2C1, slave_address, LL_I2C_ADDRSLAVE_7BIT, 1, LL_I2C_MODE_SOFTEND, LL_I2C_GENERATE_START_WRITE);
+    while(!LL_I2C_IsActiveFlag_TXIS(I2C1));
+    LL_I2C_TransmitData8(I2C1, register_address);
+    while(!LL_I2C_IsActiveFlag_TC(I2C1));
+
+    // Read data from the slave
+    LL_I2C_HandleTransfer(I2C1, slave_address, LL_I2C_ADDRSLAVE_7BIT, length, LL_I2C_MODE_AUTOEND, LL_I2C_GENERATE_RESTART_7BIT_READ);
+    uint8_t index = 0;
+    while(index < length)
+    {
+        if(LL_I2C_IsActiveFlag_RXNE(I2C1))
+        {
+            buffer[index++] = LL_I2C_ReceiveData8(I2C1);
+        }
+    }
+    while(!LL_I2C_IsActiveFlag_STOP(I2C1));
+
+    // Clean up
+    LL_I2C_DisableIT_RX(I2C1);
+    LL_I2C_ClearFlag_STOP(I2C1);
+    LL_I2C_ClearFlag_NACK(I2C1);
+
+    return index; // Return the number of bytes read
+}
+
+
+void i2c_send_byte(uint8_t slave_address, uint8_t register_address, uint8_t data)
+{
+
+
+	    // Initialize communication
+	    LL_I2C_HandleTransfer(I2C1, slave_address, LL_I2C_ADDRSLAVE_7BIT, 1, LL_I2C_MODE_AUTOEND, LL_I2C_GENERATE_START_WRITE);
+
+
+
+	    LL_I2C_TransmitData8(I2C1, register_address);
+
+
+	    while (!LL_I2C_IsActiveFlag_STOP(I2C1))
+	    {
+	        if (LL_I2C_IsActiveFlag_TXIS(I2C1))
+	        {
+	        	LL_I2C_TransmitData8(I2C1, data);
+	        }
+	    }
+
+	    LL_I2C_ClearFlag_STOP(I2C1);
+
+}
+
 
 void I2C1_EV_IRQHandler(void)
 {

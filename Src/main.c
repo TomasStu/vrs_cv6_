@@ -22,11 +22,10 @@
 #include "main.h"
 #include "i2c.h"
 #include "gpio.h"
+#include "hts221.h"
 
 // I2C slave device useful information
-#define 	LSM6DS0_DEVICE_ADDRESS		0xD6U
-#define 	LSM6DS0_WHO_AM_I_VALUE		0x68U
-#define 	LSM6DS0_WHO_AM_I_ADDRES		0x0FU
+
 
 
 void SystemClock_Config(void);
@@ -43,15 +42,27 @@ int main(void)
 
   MX_GPIO_Init();
   MX_I2C1_Init();
+  MX_DMA_Init();
+  MX_USART2_UART_Init();
 
+
+  uint8_t tx_data[] = "Connected...";
+  uint8_t data = 0;
+  i2c_send_byte(HTS221_WRITE_ADDRESS,CTRL_REG1_ADDRES, 0x81);
+  uint8_t test = 0;
   while (1)
   {
-	  if(i2c_master_read_byte(LSM6DS0_DEVICE_ADDRESS, LSM6DS0_WHO_AM_I_ADDRES) == LSM6DS0_WHO_AM_I_VALUE)
+
+	  if(i2c_master_read_byte(HTS221_READ_ADDRESS, HTS221_WHO_AM_I_ADDRES) == HTS221_WHO_AM_I_VALUE)
 	  {
 		  LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_3);
+		  USART2_PutBuffer(tx_data, sizeof(tx_data));
 	  }
+	  readTemp();
+	  //data = i2c_master_read_bytes(HTS221_READ_ADDRESS, HUMIDITY_OUT_L_ADDRES, 2);
 
-	  LL_mDelay(100);
+	  LL_mDelay(2000);
+
   }
 }
 
