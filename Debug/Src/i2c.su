@@ -24,5 +24,5 @@
 ../Src/i2c.c:29:6:MX_I2C1_Init	64	static
 ../Src/i2c.c:76:9:i2c_master_read_byte	24	static
 ../Src/i2c.c:105:9:i2c_master_read_bytes	40	static
-../Src/i2c.c:137:6:i2c_send_byte	24	static
-../Src/i2c.c:162:6:I2C1_EV_IRQHandler	8	static
+../Src/i2c.c:141:6:i2c_send_byte	24	static
+../Src/i2c.c:166:6:I2C1_EV_IRQHandler	8	static

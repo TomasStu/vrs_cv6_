@@ -1,4 +1,6 @@
-../HTS221/hts221.c:13:9:whoAmI	2
-../HTS221/hts221.c:19:9:readTemp	1
-../HTS221/hts221.c:51:9:convertTemp	1
-../HTS221/hts221.c:58:9:returnTemp	2
+../HTS221/hts221.c:16:6:htsInit	1
+../HTS221/hts221.c:24:9:whoAmI	2
+../HTS221/hts221.c:30:6:readTemp	1
+../HTS221/hts221.c:48:9:convertTemp	1
+../HTS221/hts221.c:52:7:returnTemp	1
+../HTS221/hts221.c:66:7:returnHum	3

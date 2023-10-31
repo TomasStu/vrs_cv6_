@@ -19,34 +19,45 @@
 #define 	HTS221_WHO_AM_I_ADDRES		0x0FU
 
 #define 	CTRL_REG1_ADDRES			0x20U
+#define 	INIT_REG1               	0x80U
 
 #define 	TEMP_OUT_H_ADDRES			0x2BU
 #define 	TEMP_OUT_L_ADDRES			0x2AU
 
-#define 	HUMIDITY_OUT_H_ADDRES		0x29U
-#define 	HUMIDITY_OUT_L_ADDRES		0x28U
-
-// I2C Address
-#define HTS221_READ_ADDRESS     0xBFU
-// Register Addresses
-#define TEMP_OUT_L_ADDRES       0x2AU
-#define TEMP_OUT_H_ADDRES       0x2BU
-#define T0_degC_x8_ADDRES       0x32U
-#define T1_degC_x8_ADDRES       0x33U
-#define T1_T0_MSB_ADDRES        0x35U
-#define T0_OUT_L_ADDRES         0x3CU
-#define T0_OUT_H_ADDRES         0x3DU
-#define T1_OUT_L_ADDRES         0x3EU
-#define T1_OUT_H_ADDRES         0x3FU
+#define 	HUMIDITY_OUT_H_ADDRESS		0x29U
+#define 	HUMIDITY_OUT_L_ADDRESS		0x28U
 
 
+//HUM PARAMETERS
+#define 	H0_rH_x2_ADDRESS      		0x30
+#define 	H1_rH_x2_ADDRESS      		0x31
+#define 	H0_T0_OUT_L_ADDRESS   		0x36
+#define 	H0_T0_OUT_H_ADDRESS   		0x37
+#define 	H1_T0_OUT_L_ADDRESS   		0x3A
+#define 	H1_T0_OUT_H_ADDRESS   		0x3B
+
+// Calibration coefficients addresses
+#define 	T0_degC_x8_ADDR     		0x32
+#define 	T1_degC_x8_ADDR     		0x33
+#define 	T0_T1_MSB_ADDR      		0x35
+#define 	T0_OUT_L_ADDR       		0x3C
+#define 	T0_OUT_H_ADDR       		0x3D
+#define 	T1_OUT_L_ADDR       		0x3E
+#define 	T1_OUT_H_ADDR       		0x3F
+
+
+
+
+
+
+void 	htsInit();
 uint8_t  whoAmI();
-uint8_t  readTemp();
+void  	readTemp();
 uint8_t  readHum();
 uint8_t  convertTemp(uint8_t rawTemp);
 uint8_t  convertHum(uint8_t rawHum);
-uint8_t returnHum();
-uint8_t  returnTemp();
+float  	 returnHum();
+float  	returnTemp();
 
 
 #endif /* HTS221_H_ */

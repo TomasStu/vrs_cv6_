@@ -23,10 +23,11 @@
 #include "i2c.h"
 #include "gpio.h"
 #include "hts221.h"
+#include "lps25hb.h"
 
 // I2C slave device useful information
 
-
+char buffer[500];
 
 void SystemClock_Config(void);
 
@@ -44,22 +45,31 @@ int main(void)
   MX_I2C1_Init();
   MX_DMA_Init();
   MX_USART2_UART_Init();
+  lpsInit();
+  htsInit();
 
 
-  uint8_t tx_data[] = "Connected...";
+  uint8_t tx_data[] = "Connected...\n\r";
   uint8_t data = 0;
-  i2c_send_byte(HTS221_WRITE_ADDRESS,CTRL_REG1_ADDRES, 0x81);
-  uint8_t test = 0;
+  float height = 0;
+  float hum = 0;
+  float pressure = 0;
+  float temp = 0;
   while (1)
   {
-
-	  if(i2c_master_read_byte(HTS221_READ_ADDRESS, HTS221_WHO_AM_I_ADDRES) == HTS221_WHO_AM_I_VALUE)
+	  /*
+	  if(whoAmILPS())
 	  {
 		  LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_3);
 		  USART2_PutBuffer(tx_data, sizeof(tx_data));
-	  }
-	  readTemp();
-	  //data = i2c_master_read_bytes(HTS221_READ_ADDRESS, HUMIDITY_OUT_L_ADDRES, 2);
+	  }*/
+
+	  temp = returnTemp();
+	  pressure = lps25hb_read_pressure();
+	  height = returnHeight();
+	  hum = returnHum();
+	  sprintf(buffer, "teplota [°C]: %.2f, rel. vlhkosť [%%]:%.2f, tlak vzduchu [hPa]: %.2f, relatívna výška od zeme [m]: %.2f;\n\r",temp,hum,pressure, height,hum,height);
+	  USART2_PutBuffer(buffer, sizeof(buffer));
 
 	  LL_mDelay(2000);
 
