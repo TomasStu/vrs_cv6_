@@ -24,6 +24,8 @@
 #include "gpio.h"
 #include "hts221.h"
 #include "lps25hb.h"
+#include "usart.h"
+
 
 // I2C slave device useful information
 
@@ -50,26 +52,22 @@ int main(void)
 
 
   uint8_t tx_data[] = "Connected...\n\r";
-  uint8_t data = 0;
+  uint8_t data ;
   float height = 0;
   float hum = 0;
   float pressure = 0;
   float temp = 0;
   while (1)
   {
-	  /*
-	  if(whoAmILPS())
-	  {
-		  LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_3);
-		  USART2_PutBuffer(tx_data, sizeof(tx_data));
-	  }*/
+
 
 	  temp = returnTemp();
-	  pressure = lps25hb_read_pressure();
+	  pressure = returnPressure();
 	  height = returnHeight();
 	  hum = returnHum();
 	  sprintf(buffer, "teplota [°C]: %.2f, rel. vlhkosť [%%]:%.2f, tlak vzduchu [hPa]: %.2f, relatívna výška od zeme [m]: %.2f;\n\r",temp,hum,pressure, height,hum,height);
 	  USART2_PutBuffer(buffer, sizeof(buffer));
+	  data = i2c_master_read_byte(HTS221_READ_ADDRESS,0x20);
 
 	  LL_mDelay(2000);
 

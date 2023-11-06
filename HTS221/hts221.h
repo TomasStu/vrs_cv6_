@@ -19,7 +19,7 @@
 #define 	HTS221_WHO_AM_I_ADDRES		0x0FU
 
 #define 	CTRL_REG1_ADDRES			0x20U
-#define 	INIT_REG1               	0x80U
+#define 	INIT_REG1               	0x87U
 
 #define 	TEMP_OUT_H_ADDRES			0x2BU
 #define 	TEMP_OUT_L_ADDRES			0x2AU
@@ -47,17 +47,19 @@
 
 
 
+uint8_t whoAmI();
+
+void htsInit();
+void tempInit();
+
+float rawTemp();
+float rawHum();
+
+float returnHum();
+float returnTemp();
 
 
 
-void 	htsInit();
-uint8_t  whoAmI();
-void  	readTemp();
-uint8_t  readHum();
-uint8_t  convertTemp(uint8_t rawTemp);
-uint8_t  convertHum(uint8_t rawHum);
-float  	 returnHum();
-float  	returnTemp();
 
 
 #endif /* HTS221_H_ */

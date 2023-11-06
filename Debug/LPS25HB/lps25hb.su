@@ -1,5 +1,6 @@
-../LPS25HB/lps25hb.c:13:7:returnHeight	8	static
-../LPS25HB/lps25hb.c:21:7:calculateHeight	40	static
-../LPS25HB/lps25hb.c:31:6:lpsInit	8	static
-../LPS25HB/lps25hb.c:36:9:whoAmILPS	8	static
-../LPS25HB/lps25hb.c:43:7:lps25hb_read_pressure	24	static
+../LPS25HB/lps25hb.c:18:7:returnHeight	8	static
+../LPS25HB/lps25hb.c:25:7:calculateHeight	16	static
+../LPS25HB/lps25hb.c:30:6:lpsInit	8	static
+../LPS25HB/lps25hb.c:35:9:whoAmILPS	8	static
+../LPS25HB/lps25hb.c:42:9:rawPressure	16	static
+../LPS25HB/lps25hb.c:51:7:returnPressure	16	static

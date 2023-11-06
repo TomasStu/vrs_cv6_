@@ -13,6 +13,6 @@
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_system.h:1634:22:LL_FLASH_SetLatency	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_system.h:1647:26:LL_FLASH_GetLatency	1
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_cortex.h:260:22:LL_SYSTICK_SetClkSource	2
-../Src/main.c:35:5:main	1
-../Src/main.c:84:6:SystemClock_Config	4
-../Src/main.c:121:6:Error_Handler	1
+../Src/main.c:37:5:main	1
+../Src/main.c:82:6:SystemClock_Config	4
+../Src/main.c:119:6:Error_Handler	1

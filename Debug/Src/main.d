@@ -19,7 +19,7 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_gpio.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_usart.h ../Inc/i2c.h \
  ../Inc/main.h ../Inc/gpio.h C:/vrs/vrs_cv6_/HTS221/hts221.h \
- C:/vrs/vrs_cv6_/LPS25HB/lps25hb.h
+ C:/vrs/vrs_cv6_/LPS25HB/lps25hb.h ../Inc/usart.h
 ../Inc/main.h:
 ../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h:
@@ -45,3 +45,4 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Inc/gpio.h:
 C:/vrs/vrs_cv6_/HTS221/hts221.h:
 C:/vrs/vrs_cv6_/LPS25HB/lps25hb.h:
+../Inc/usart.h:

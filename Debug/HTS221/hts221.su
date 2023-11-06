@@ -1,6 +1,7 @@
 ../HTS221/hts221.c:16:6:htsInit	8	static
 ../HTS221/hts221.c:24:9:whoAmI	8	static
-../HTS221/hts221.c:30:6:readTemp	24	static
-../HTS221/hts221.c:48:9:convertTemp	16	static
-../HTS221/hts221.c:52:7:returnTemp	16	static
-../HTS221/hts221.c:66:7:returnHum	40	static
+../HTS221/hts221.c:30:6:tempInit	24	static
+../HTS221/hts221.c:47:7:rawTemp	16	static
+../HTS221/hts221.c:56:7:returnTemp	16	static
+../HTS221/hts221.c:68:8:rawHum	16	static
+../HTS221/hts221.c:78:7:returnHum	32	static
